@@ -14,3 +14,33 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 ```js
 grunt.loadNpmTasks('grunt-osx-sign');
 ```
+
+
+## The "sign" task
+
+### Overview
+In your project's Gruntfile, add a section named `sign` to the data object passed into `grunt.initConfig()`.
+
+```js
+grunt.initConfig({
+    sign: {
+        intel: {
+            'app': "build/tmp/HTML5test-darwin-x64/HTML5test.app",
+            'identity': 'Developer ID Application: HTML5test (JDSEI39D3E)',
+            'hardenedRuntime': true,
+            'entitlements': 'build/electron/entitlements.plist',
+            'entitlements-inherit': 'build/electron/entitlements.plist'
+        },
+
+        arm: {
+            'app': "build/tmp/HTML5test-darwin-arm64/HTML5test.app",
+            'identity': 'Developer ID Application: HTML5test (JDSEI39D3E)',
+            'hardenedRuntime': true,
+            'entitlements': 'build/electron/entitlements.plist',
+            'entitlements-inherit': 'build/electron/entitlements.plist'
+        }
+    }
+})
+```
+
+For each app that you want to sign you can add a section. Each sections has a couple of options that you need to set, such as your development identity, entitlements and more. These options are documented in the [electron-osx-sign](https://github.com/electron/electron-osx-sign) project. Please read their documentation carefully. 
