@@ -1,7 +1,7 @@
 {
   "name": "grunt-osx-sign",
   "description": "Grunt plugin for signing macOS binaries using electron-osx-sign",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/NielsLeenheer/grunt-osx-sign",
   "author": {
     "name": "Niels Leenheer",
@@ -28,13 +28,13 @@
     "lint": "eslint --fix tasks/*.js"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~1.3.0"
   },
   "keywords": [
     "gruntplugin"
   ],
   "dependencies": {
-    "electron-osx-sign": "^0.5.0"
+    "electron-osx-sign": "^0.6.0"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
